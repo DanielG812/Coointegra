@@ -167,3 +167,50 @@ h1, h2, h3, .logo-text { font-family: Sora, Inter, sans-serif; line-height: 1.15
     .up, [data-reveal] { opacity: 1 !important; }
     html { scroll-behavior: auto; }
 }
+
+/* ===== Nuestra Empresa ===== */
+.nav-links a.active { color: var(--fg2); }
+.nav-links a.active::after { transform: scaleX(1); }
+@media (max-width: 1100px) { .nav-links { gap: 14px; } .nav-links a { font-size: .82rem; } }
+
+/* Kit del producto (hero) */
+.kit-wrap { display: grid; place-items: center; }
+.kit { width: 74%; animation: bob 5s ease-in-out infinite; }
+.kit-card { background: linear-gradient(160deg, #dcc197, #b9946a); color: #3b2a14; border-radius: 22px; padding: 26px 24px; text-align: center; transform: rotate(-4deg); box-shadow: 0 40px 70px -25px rgba(0, 0, 0, .65); }
+.kit-card b { display: block; font-family: Sora, sans-serif; font-size: 1.15rem; }
+.kit-card small { font-size: .8rem; opacity: .85; }
+.kit-card svg { display: block; width: 72%; margin: 16px auto; padding: 10px; background: #fff; border-radius: 12px; fill: #2b1d0e; }
+.tag { position: absolute; padding: 8px 14px; border-radius: 99px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(6px); font-size: .8rem; font-weight: 600; animation: drift 7s ease-in-out infinite; }
+.t1 { top: 6%; right: 0; }
+.t2 { bottom: 8%; left: 0; animation-delay: -3.5s; }
+@keyframes bob { 50% { transform: translateY(-14px); } }
+@keyframes drift { 50% { transform: translateY(10px); } }
+
+/* Cifras, tablas y gráfica */
+.stats { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+.stat { padding: 26px 22px; text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 20px; }
+.stat strong { display: block; font-family: Sora, sans-serif; font-size: clamp(1.6rem, 3.2vw, 2.3rem); color: var(--primary); line-height: 1.2; }
+.stat span { color: var(--muted); font-size: .9rem; }
+.note { margin-top: 22px; color: var(--muted); max-width: 760px; }
+.scroll { overflow-x: auto; border-radius: 20px; border: 1px solid var(--border); }
+.tbl { width: 100%; min-width: 520px; border-collapse: collapse; background: #fff; }
+.tbl th, .tbl td { padding: 14px 18px; text-align: left; }
+.tbl th { background: var(--primary); color: #fff; font-size: .9rem; }
+.tbl td { border-top: 1px solid var(--border); color: var(--muted); transition: background .2s; }
+.tbl th:not(:first-child), .tbl td:not(:first-child) { text-align: right; }
+.tbl tbody tr:hover td { background: var(--bg-light); }
+.tbl .total td { background: #ecfdf5; color: var(--text); font-weight: 700; }
+.chart { display: flex; align-items: flex-end; gap: 18px; height: 240px; margin-top: 24px; padding: 20px 10px 0; border-bottom: 2px solid var(--border); }
+.chart div { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.chart em { font-style: normal; font-weight: 600; font-size: .85rem; color: var(--primary); margin-bottom: 6px; }
+.chart i { display: block; width: 100%; max-width: 84px; height: 0; border-radius: 12px 12px 0 0; background: var(--grad); transition: height 1.3s var(--ease) .3s; }
+.in .chart i, html:not(.js) .chart i { height: var(--h); }
+.chart-x { display: flex; gap: 18px; padding: 8px 10px 0; color: var(--muted); font-size: .85rem; }
+.chart-x span { flex: 1; text-align: center; }
+
+@media (max-width: 900px) {
+    .nav-links { gap: 0; }
+    .nav-links a { font-size: .92rem; }
+    .nav-links a.active { color: var(--mint); }
+    .kit { width: 64%; }
+}
